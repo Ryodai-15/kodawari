@@ -31,7 +31,7 @@ EC サイトへのリンクも設け、実際に商品購入も可能。
 ## 設計書
 
 UI Flows（管理者側）https://app.diagrams.net/#G1U4Yml5LO1MkDw543xBv7EWrcC2EhU01e
-UI Flows（会員側）　
+UI Flows（会員側）　https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ
 
 ## チャレンジ要素一覧
 
