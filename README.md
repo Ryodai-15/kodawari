@@ -15,7 +15,7 @@
 
 今までも店舗のECサイトはあったが、商品情報自体の情報が少なかった。<br>
 なので今回のサイトでは、商品情報に特化したサイトを作成しおすすめの召し上がり方を紹介して行きます。<br>
-又、ユーザー側もおすすめの召し上がり方を投稿する機能をつけてみんなでサイトを作り上げていければ、より良いものになると考えております。<br>
+またユーザー側もおすすめの召し上がり方を投稿する機能をつけてみんなでサイトを作り上げていければ、より良いものになると考えております。<br>
 現状コロナ下で、なかなか外での外食の機会は減りつつあると思います。そんな中、お家時間ちょっとした贅沢をお肉とkodawariサイトと共に作って頂きたいと思っております。
 
 ### ターゲットユーザ
@@ -30,11 +30,11 @@
 
 ## 設計書
 
-UI Flows（管理者側）https://app.diagrams.net/#G1U4Yml5LO1MkDw543xBv7EWrcC2EhU01e　<br>
-UI Flows（会員側）　https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ <br>
-ワイヤーフレーム（会員側) https://app.diagrams.net/#G1XVMBerUjaIrxp6L_yNtJ1MbqCbqvQNbp <br>
-ワイヤーフレーム（管理側)　https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp <br>
-ER図　https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3　<br>
+UI Flows（管理者側）https://app.diagrams.net/#G1U4Yml5LO1MkDw543xBv7EWrcC2EhU01e　　
+UI Flows（会員側）　https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ　　
+ワイヤーフレーム（会員側) https://app.diagrams.net/#G1XVMBerUjaIrxp6L_yNtJ1MbqCbqvQNbp　　
+ワイヤーフレーム（管理側)　https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp　　
+ER図　https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3　　
 テーブル定義書　https://docs.google.com/spreadsheets/d/1d6lJZtJxZV8D6abDkviPLxJnow-1_aDybqlfm-avdY4/edit#gid=296799129
 
 ## チャレンジ要素一覧
