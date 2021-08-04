@@ -33,7 +33,8 @@ EC サイトへのリンクも設け、実際に商品購入も可能。
 UI Flows（管理者側）https://app.diagrams.net/#G1U4Yml5LO1MkDw543xBv7EWrcC2EhU01e　<br>
 UI Flows（会員側）　https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ <br>
 ワイヤーフレーム（会員側) https://app.diagrams.net/#G1XVMBerUjaIrxp6L_yNtJ1MbqCbqvQNbp <br>
-ワイヤーフレーム（管理側)　https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp
+ワイヤーフレーム（管理側)　https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp <br>
+ER図　https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3
 
 ## チャレンジ要素一覧
 
