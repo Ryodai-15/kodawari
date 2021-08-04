@@ -30,11 +30,11 @@
 
 ## 設計書
 
-UI Flows（管理者側）https://app.diagrams.net/#G1U4Yml5LO1MkDw543xBv7EWrcC2EhU01e　　
-UI Flows（会員側）　https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ　　
-ワイヤーフレーム（会員側) https://app.diagrams.net/#G1XVMBerUjaIrxp6L_yNtJ1MbqCbqvQNbp　　
-ワイヤーフレーム（管理側)　https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp　　
-ER図　https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3　　
+UI Flows（管理者側）https://app.diagrams.net/#G1U4Yml5LO1MkDw543xBv7EWrcC2EhU01e　<br>
+UI Flows（会員側）　https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ　<br>　
+ワイヤーフレーム（会員側) https://app.diagrams.net/#G1XVMBerUjaIrxp6L_yNtJ1MbqCbqvQNbp　<br>　
+ワイヤーフレーム（管理側)　https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp　　<br>
+ER図　https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3　　<br>
 テーブル定義書　https://docs.google.com/spreadsheets/d/1d6lJZtJxZV8D6abDkviPLxJnow-1_aDybqlfm-avdY4/edit#gid=296799129
 
 ## チャレンジ要素一覧
