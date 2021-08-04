@@ -35,7 +35,8 @@ UI Flows（会員側）　https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjw
 ワイヤーフレーム（会員側) https://app.diagrams.net/#G1XVMBerUjaIrxp6L_yNtJ1MbqCbqvQNbp<br>
 ワイヤーフレーム（管理側)　https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp<br>
 ER図　https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3<br>
-テーブル定義書　https://docs.google.com/spreadsheets/d/1d6lJZtJxZV8D6abDkviPLxJnow-1_aDybqlfm-avdY4/edit#gid=296799129
+テーブル定義書　https://docs.google.com/spreadsheets/d/1d6lJZtJxZV8D6abDkviPLxJnow-1_aDybqlfm-avdY4/edit#gid=296799129<br>
+アプリケーション詳細設定　
 
 ## チャレンジ要素一覧
 
