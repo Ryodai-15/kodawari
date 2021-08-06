@@ -36,7 +36,7 @@ UI Flows（会員側）<br>https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabj
 ワイヤーフレーム（管理側)　<br>  https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp<br>
 ER図  <br>https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3<br>
 テーブル定義書  <br>https://docs.google.com/spreadsheets/d/1d6lJZtJxZV8D6abDkviPLxJnow-1_aDybqlfm-avdY4/edit#gid=296799129<br>
-アプリケーション詳細設定　https://docs.google.com/spreadsheets/d/1kJE08PmcW1aBbz4R6femVGCvgAzDdPDp/edit#gid=549108681<br>
+アプリケーション詳細設定　<br>https://docs.google.com/spreadsheets/d/1kJE08PmcW1aBbz4R6femVGCvgAzDdPDp/edit#gid=549108681<br>
 WBSシート(進捗管理)　https://docs.google.com/spreadsheets/d/12E5R0iLyuZQ1DcaD8ni3fDGPufj0tyK1clWefmnCTEo/edit#gid=1773513600
 
 ## チャレンジ要素一覧
