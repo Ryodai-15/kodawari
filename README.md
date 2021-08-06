@@ -31,7 +31,7 @@
 ## 設計書
 
 UI Flows（管理者側）<br>  https://app.diagrams.net/#G1U4Yml5LO1MkDw543xBv7EWrcC2EhU01e<br>
-UI Flows（会員側）<br>　  https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ<br>
+UI Flows（会員側）<br>https://app.diagrams.net/#G1hosC37VHxIGNLUmaVrFsIdabjwS2-kkJ<br>
 ワイヤーフレーム（会員側) <br>  https://app.diagrams.net/#G1XVMBerUjaIrxp6L_yNtJ1MbqCbqvQNbp<br>
 ワイヤーフレーム（管理側)　<br>  https://app.diagrams.net/#G1XIRqi6bIUFb736xPthQT_DxL_XLySZwp<br>
 ER図  <br>　https://app.diagrams.net/#G1t9hZ2LboJD6BGlkDEVWRXotp3417LGL3<br>
