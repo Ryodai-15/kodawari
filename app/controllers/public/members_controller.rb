@@ -22,7 +22,7 @@ class Public::MembersController < ApplicationController
   end
   
   def unsubscribe
-      @member = Member.find(params[:id])
+    @member = current_member
   end
   
   def withdraw
