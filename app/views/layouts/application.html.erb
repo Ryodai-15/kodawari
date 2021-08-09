@@ -9,7 +9,91 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column vh-100">
+    <header class="border">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <%= link_to root_path do %>
+            <h1 class="title border navbar-brand pt-3 pb-3 pr-5 pl-5 text-dark" href="/">LOGO</h1>
+          <% end %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+            <% if member_signed_in? %>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "マイページ", member_path(current_member), class: 'btn btn-default nav-link text-dark' %>
+              </li>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "商品一覧", home_about_path, class: 'btn btn-default nav-link text-dark' %>
+              </li>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "カート", home_about_path, class: 'btn btn-default nav-link text-dark' %>
+              </li>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "ログアウト", destroy_member_session_path, method: :delete, class: 'btn btn-default nav-link text-dark' %>
+              </li>
+
+              <!--< elsif admin_signed_in? %>-->
+              <!--<li class="btn btn-default border ml-4">-->
+              <!--  <= link_to "商品一覧", admin_items_path, class: 'btn btn-default nav-link text-dark' %>-->
+              <!--</li>-->
+              <!--<li class="btn btn-default border ml-4">-->
+              <!--  <= link_to "会員一覧", admin_customers_path, class: 'btn btn-default nav-link text-dark' %>-->
+              <!--</li>-->
+              <!--<li class="btn btn-default border ml-4">-->
+              <!--  <= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'btn btn-default nav-link text-dark' %>-->
+              <!--</li>-->
+
+            <% else %>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "About", home_about_path, class: 'btn btn-default nav-link text-dark' %>
+              </li>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "商品一覧ページ", home_about_path, class: 'btn btn-default nav-link text-dark' %>
+              </li>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "新規登録", new_member_registration_path, class: 'btn btn-default nav-link text-dark' %>
+              </li>
+              <li class="btn btn-default border ml-4">
+                <%= link_to "ログイン", new_member_session_path, class: 'btn btn-default nav-link text-dark' %>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="row mt-2">
+          <div class="col-sm-9 text-center">
+            <% if member_signed_in? %>
+              <p>ようこそ、<%= current_member.name %>さん！</p>
+            <% end %>
+          </div>
+          <div class="col-sm-3">
+              <!--<= form_tag(items_path, :method => "get") do %>-->
+              <!--  <= text_field_tag :search %>-->
+              <!--  <= button_tag :type => "submit", :name => nil,　class: "button is-info " do %>-->
+              <!--  <i class="fas fa-search"></i>-->
+              <!--  < end %>-->
+              <!--< end %>-->
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="mb-auto">
+        <%= yield %>
+      </div>
+    </main>
+    <footer class="border pt-3 pb-3">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>Copyright © 2021 こだわり家金子精肉店　inc.　 All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

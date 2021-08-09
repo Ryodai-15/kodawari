@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :members
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root :to => "public/homes#top"
+  get "home/about" => "public/homes#about"
+
+ devise_for :members , :controllers => {
+     :sessions => 'public/members/sessions',
+     :registrations => 'public/members/registrations'
+  }
+
+  scope module: :public do
+    resources :members, only: [:show, :edit, :update] do
+      collection do
+        get 'unsubscribe'
+        patch 'withdraw'
+      end
+    end
+  end
+
 end
