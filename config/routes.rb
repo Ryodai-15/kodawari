@@ -15,6 +15,10 @@ Rails.application.routes.draw do
         patch 'withdraw'
       end
     end
+    
+    resources :products, only: [:index, :show] do
+      resources :recipes
+    end
   end
   
   namespace :admin do
