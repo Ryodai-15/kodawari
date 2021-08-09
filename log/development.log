@@ -3066,3 +3066,77 @@ Processing by Public::MembersController#show as HTML
 Completed 200 OK in 76ms (Views: 74.4ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 60.76.79.101 at 2021-08-09 06:46:31 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::HomesController#top as HTML
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (1.7ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 571ms (Views: 560.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/members/2" for 60.76.79.101 at 2021-08-09 06:46:37 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  Rendered public/members/show.html.erb within layouts/application (0.6ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/2/edit" for 60.76.79.101 at 2021-08-09 06:46:40 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:12
+  Rendering public/members/edit.html.erb within layouts/application
+  Rendered public/members/edit.html.erb within layouts/application (7.8ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 81ms (Views: 77.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/unsubscribe" for 60.76.79.101 at 2021-08-09 06:47:16 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#unsubscribe as HTML
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:25
+  Rendering public/members/unsubscribe.html.erb within layouts/application
+  Rendered public/members/unsubscribe.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 77ms (Views: 73.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/members/2" for 60.76.79.101 at 2021-08-09 06:47:19 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  Rendered public/members/show.html.erb within layouts/application (1.1ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 99ms (Views: 95.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/members/2/edit" for 60.76.79.101 at 2021-08-09 06:47:20 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:12
+  Rendering public/members/edit.html.erb within layouts/application
+  Rendered public/members/edit.html.erb within layouts/application (1.2ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 0.4ms)
+
+
