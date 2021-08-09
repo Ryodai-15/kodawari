@@ -37,7 +37,7 @@
 
               <% elsif admin_signed_in? %>
               <li class="btn btn-default border ml-4">
-                <%= link_to "商品一覧", root_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "商品一覧", admin_products_path, class: 'btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
                 <%= link_to "会員一覧", admin_members_path, class: 'btn btn-default nav-link text-dark' %>

@@ -1,12 +1,11 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "members/shared/error_messages", resource: resource %>
-
-  なぜ変更できないんだ〜
+  <%= render "devise/shared/error_messages", resource: resource %>
+  
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
@@ -32,4 +31,4 @@
   </div>
 <% end %>
 
-<%= render "members/shared/links" %>
+<%= render "devise/shared/links" %>
