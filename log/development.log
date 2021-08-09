@@ -6258,3 +6258,1231 @@ Processing by Admin::ProductsController#show as HTML
 Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/admin/products" for 60.76.79.101 at 2021-08-09 12:18:04 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/admin/products/index.html.erb:21
+  Rendered admin/products/index.html.erb within layouts/application (10.4ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 352ms (Views: 339.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/products/1" for 60.76.79.101 at 2021-08-09 12:18:07 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:23
+  Rendering admin/products/show.html.erb within layouts/application
+  Rendered admin/products/show.html.erb within layouts/application (1.6ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/products/1/edit" for 60.76.79.101 at 2021-08-09 12:18:08 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:27
+  Rendering admin/products/edit.html.erb within layouts/application
+  Rendered admin/products/edit.html.erb within layouts/application (10.5ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 109ms (Views: 106.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/admin/products/1" for 60.76.79.101 at 2021-08-09 12:18:23 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EjbH3nmElm6oDDPth9V9/pY5ZEIPfucVHbAC4DvQPR1YMgD0T3oepj4pCsE5ncEHB+3hYSsXqmGq/mUsOFIo6g==", "product"=>{"image"=>"{}", "name"=>"和牛コンビーフ", "introduction"=>"テスト投稿編集可能", "kodawari"=>"テスト投稿編集チェック"}, "commit"=>"変更を保存", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[36mProduct Update (1.0ms)[0m  [1m[33mUPDATE "products" SET "image_id" = ?, "kodawari" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["image_id", "2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e"], ["kodawari", "テスト投稿編集チェック"], ["updated_at", "2021-08-09 12:18:23.090293"], ["id", 1]]
+  ↳ app/controllers/admin/products_controller.rb:32
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/products_controller.rb:32
+Redirected to https://caf31aab8e2b4648ab4d7bf5be64f380.vfs.cloud9.ap-northeast-1.amazonaws.com/admin/products/1
+Completed 302 Found in 18ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/admin/products/1" for 60.76.79.101 at 2021-08-09 12:18:23 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:23
+  Rendering admin/products/show.html.erb within layouts/application
+  Rendered admin/products/show.html.erb within layouts/application (1.5ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 87ms (Views: 84.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/members" for 60.76.79.101 at 2021-08-09 12:18:25 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::MembersController#index as HTML
+  Rendering admin/members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/admin/members/index.html.erb:22
+  Rendered admin/members/index.html.erb within layouts/application (13.8ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 108ms (Views: 106.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 60.76.79.101 at 2021-08-09 22:01:20 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::HomesController#top as HTML
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (1.5ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 483ms (Views: 473.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/products" for 60.76.79.101 at 2021-08-09 22:01:23 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/admin/products/index.html.erb:21
+  Rendered admin/products/index.html.erb within layouts/application (13.8ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 174ms (Views: 170.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/members" for 60.76.79.101 at 2021-08-09 22:01:24 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::MembersController#index as HTML
+  Rendering admin/members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/admin/members/index.html.erb:22
+  Rendered admin/members/index.html.erb within layouts/application (37.3ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 202ms (Views: 197.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/products" for 60.76.79.101 at 2021-08-09 22:01:25 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/admin/products/index.html.erb:21
+  Rendered admin/products/index.html.erb within layouts/application (9.2ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 192ms (Views: 190.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/members" for 60.76.79.101 at 2021-08-09 22:01:25 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::MembersController#index as HTML
+  Rendering admin/members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/admin/members/index.html.erb:22
+  Rendered admin/members/index.html.erb within layouts/application (3.8ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 92ms (Views: 89.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/products" for 60.76.79.101 at 2021-08-09 22:01:26 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/admin/products/index.html.erb:21
+  Rendered admin/products/index.html.erb within layouts/application (3.4ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 125ms (Views: 123.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/members" for 60.76.79.101 at 2021-08-09 22:01:28 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::MembersController#index as HTML
+  Rendering admin/members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  ↳ app/views/admin/members/index.html.erb:22
+  Rendered admin/members/index.html.erb within layouts/application (3.4ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 76ms (Views: 74.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/admins/sign_out" for 60.76.79.101 at 2021-08-09 22:01:30 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/7YY/CcjkdkFXQu0PXnW4+qC5HaB75NluuTUgdOCvdvzEZmEHf78z6HdcIBcpxjha6TkSfcGovKH5Xxwppe7IQ=="}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://caf31aab8e2b4648ab4d7bf5be64f380.vfs.cloud9.ap-northeast-1.amazonaws.com/
+Completed 302 Found in 25ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 60.76.79.101 at 2021-08-09 22:01:30 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::HomesController#top as HTML
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 87ms (Views: 86.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/sign_up" for 60.76.79.101 at 2021-08-09 22:01:32 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::Members::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 164ms (Views: 163.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/members/sign_in" for 60.76.79.101 at 2021-08-09 22:01:35 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::Members::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 94ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/members/sign_in" for 60.76.79.101 at 2021-08-09 22:01:41 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::Members::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lws/PoNm9gs8MKeyd0w7OAIij6wodeNTUvwJ2IXFPuYEJMLiur7fIe1/7Y6UAYJPI2/BqI/E/RfrRX4wgdtcbw==", "member"=>{"email"=>"test@test", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."email" = ? LIMIT ?[0m  [["email", "test@test"], ["LIMIT", 1]]
+  ↳ app/controllers/public/members/sessions_controller.rb:33
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."email" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["email", "test@test"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://caf31aab8e2b4648ab4d7bf5be64f380.vfs.cloud9.ap-northeast-1.amazonaws.com/
+Completed 302 Found in 632ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 60.76.79.101 at 2021-08-09 22:01:41 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::HomesController#top as HTML
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (0.3ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 90ms (Views: 87.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home/about" for 60.76.79.101 at 2021-08-09 22:01:44 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::HomesController#about as HTML
+  Rendering public/homes/about.html.erb within layouts/application
+  Rendered public/homes/about.html.erb within layouts/application (0.4ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/members/1" for 60.76.79.101 at 2021-08-09 22:29:54 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  Rendered public/members/show.html.erb within layouts/application (1.5ms)
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 5506ms (Views: 5474.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:30:02 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered public/products/index.html.erb within layouts/application (471.0ms)
+Completed 500 Internal Server Error in 482ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `products' for #<#<Class:0x00007ff50de344c8>:0x00007ff50de867f0>
+Did you mean?  @products):
+    15:     <div class="col-sm-9">
+    16:       <h3>商品一覧(全<%= Product.count %>件)</h3>
+    17:       <div class="d-flex flex-wrap">
+    18:         <% products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(product.id) do %>
+  
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345238357700'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:30:24 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (331.4ms)
+Completed 500 Internal Server Error in 336ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x00007ff50de344c8>:0x00007ff50e79fa58>
+Did you mean?  @products):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(product.id) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345243271740'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345243271740'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:30:39 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product.id) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345243862180'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345243862180'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:30:50 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"public/products", :id=>nil}, missing required keys: [:id]):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345234147180'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345234147180'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:30:54 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"public/products", :id=>nil}, missing required keys: [:id]):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345310944340'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345310944340'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:31:08 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product.id) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345235443240'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345235443240'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:32:03 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product.id) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345319099060'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345319099060'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:33:16 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"public/products"}, missing required keys: [:id]):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345235118820'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345235118820'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:33:31 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"public/products", :id=>nil}, missing required keys: [:id]):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345097129960'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345097129960'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:33:43 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    18:         <% @products.each do |item| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product.id) do %>
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345243327900'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345243327900'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:34:01 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  Rendered public/products/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/Kodawari/app/views/public/products/index.html.erb:36: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/index.html.erb:36: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:34:30 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (351.8ms)
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x00007ff50de344c8>:0x00007ff50e7f4378>
+Did you mean?  @products):
+    21:             <!--<= link_to product_path(@product.id) do %>-->
+    22:               <%= attachment_image_tag item, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+    25:               </p>
+    26:             <!--< end %>-->
+    27:           </div>
+  
+app/views/public/products/index.html.erb:24:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345243469800'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345243469800'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:34:59 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (4.8ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 184ms (Views: 181.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/attachments/c2c8f81418b773e4636b71db235d763758bd6eb2/store/fill/170/100/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" for 60.76.79.101 at 2021-08-09 22:34:59 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-09 22:34:59 +0000] GET "/c2c8f81418b773e4636b71db235d763758bd6eb2/store/fill/170/100/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" 200 88.4ms
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:35:40 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.5ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 160ms (Views: 158.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members/1" for 60.76.79.101 at 2021-08-09 22:40:41 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  Rendered public/members/show.html.erb within layouts/application (0.6ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 133ms (Views: 130.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/1/edit" for 60.76.79.101 at 2021-08-09 22:40:43 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:12
+  Rendering public/members/edit.html.erb within layouts/application
+  Rendered public/members/edit.html.erb within layouts/application (15.1ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 119ms (Views: 115.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:40:44 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.1ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 118ms (Views: 117.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:41:06 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    18:         <% @products.each do |product| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product.id) do %>
+    22:               <%= attachment_image_tag product, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb___557484284438188479_70345235425740'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb___557484284438188479_70345235425740'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:43:38 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Product::ActiveRecord_Relation:0x0000000004ecc0a8>
+Did you mean?  ids):
+    18:         <% @products.each do |product| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@products.id) do %>
+    22:               <%= attachment_image_tag product, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb__3961692257222158747_41320580'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb__3961692257222158747_41320580'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:43:50 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    18:         <% @products.each do |product| %>
+    19:         <div class="flex-item">
+    20:           <div class="card　border-0">
+    21:             <%= link_to product_path(@product.id) do %>
+    22:               <%= attachment_image_tag product, :image, :fill, 170, 100 %>
+    23:               <p class="card-title">
+    24:                 <%= product.name %>
+  
+app/views/public/products/index.html.erb:21:in `block in _app_views_public_products_index_html_erb__3961692257222158747_70245062636360'
+app/views/public/products/index.html.erb:18:in `_app_views_public_products_index_html_erb__3961692257222158747_70245062636360'
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:44:03 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (6.3ms)
+  [1m[36mMember Load (3.8ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 672ms (Views: 665.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:44:06 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/Kodawari/app/views/public/products/show.html.erb:40: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:40: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:44:09 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.7ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 109ms (Views: 107.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:44:11 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/Kodawari/app/views/public/products/show.html.erb:40: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/public/products/show.html.erb:40: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:44:12 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.3ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 102ms (Views: 101.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:44:29 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (4.9ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 121ms (Views: 120.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:44:30 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (354.8ms)
+Completed 500 Internal Server Error in 363ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x00000000043a1958>:0x00007fc6682abe90>
+Did you mean?  @products):
+    16:       <div class="d-flex flex-wrap">
+    17:         <div class="flex-item">
+    18:           <div class="card　border-0">
+    19:               <%= attachment_image_tag product, :image, :fill, 170, 100 %>
+    20:               <p class="card-title">
+    21:                 <%= product.name %>
+    22:               </p>
+  
+app/views/public/products/show.html.erb:19:in `_app_views_public_products_show_html_erb__2572063016743200229_70245063842800'
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:45:16 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    18:           <div class="card　border-0">
+    19:               <%= attachment_image_tag @product, :image, :fill, 170, 100 %>
+    20:               <p class="card-title">
+    21:                 <%= @product.name %>
+    22:               </p>
+    23:               <p class="card-title">
+    24:                 <%= @product.introduction %>
+  
+app/views/public/products/show.html.erb:21:in `_app_views_public_products_show_html_erb__2572063016743200229_70245065592220'
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:46:24 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    18:           <div class="card　border-0">
+    19:               <%= attachment_image_tag @product, :image, :fill, 170, 100 %>
+    20:               <p class="card-title">
+    21:                 <%= @product.name %>
+    22:               </p>
+    23:               <p class="card-title">
+    24:                 <%= @product.introduction %>
+  
+app/views/public/products/show.html.erb:21:in `_app_views_public_products_show_html_erb__2572063016743200229_70244961920040'
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:46:41 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (255.2ms)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for #<#<Class:0x00000000043a1958>:0x00007fc6796ccd88>
+Did you mean?  @products):
+    18:           <div class="card　border-0">
+    19:               <%= attachment_image_tag @product, :image, :fill, 170, 100 %>
+    20:               <p class="card-title">
+    21:                 <%= product.name %>
+    22:               </p>
+    23:               <p class="card-title">
+    24:                 <%= @product.introduction %>
+  
+app/views/public/products/show.html.erb:21:in `_app_views_public_products_show_html_erb__2572063016743200229_70245208713960'
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:46:53 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    18:           <div class="card　border-0">
+    19:               <%= attachment_image_tag @product, :image, :fill, 170, 100 %>
+    20:               <p class="card-title">
+    21:                 <%= @product.name %>
+    22:               </p>
+    23:               <p class="card-title">
+    24:                 <%= @product.introduction %>
+  
+app/views/public/products/show.html.erb:21:in `_app_views_public_products_show_html_erb__2572063016743200229_70245211311900'
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:47:05 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `introduction' for nil:NilClass):
+    21:                 <!--<= @product.name %>-->
+    22:               </p>
+    23:               <p class="card-title">
+    24:                 <%= @product.introduction %>
+    25:               </p>
+    26:               <p class="card-title">
+    27:                 <%= @product.kodawari %>
+  
+app/views/public/products/show.html.erb:24:in `_app_views_public_products_show_html_erb__2572063016743200229_70245206738520'
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:47:26 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `introduction' for nil:NilClass):
+    21:                 <= @product.name %>
+    22:               </p>
+    23:               <p class="card-title">
+    24:                 <%= @product.introduction %>
+    25:               </p>
+    26:               <p class="card-title">
+    27:                 <%= @product.kodawari %>
+  
+app/views/public/products/show.html.erb:24:in `_app_views_public_products_show_html_erb__2572063016743200229_41093440'
+Started GET "/products/" for 60.76.79.101 at 2021-08-09 22:47:29 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (6.0ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 150ms (Views: 149.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/" for 60.76.79.101 at 2021-08-09 22:47:49 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (12.9ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 134ms (Views: 128.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:47:50 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.7ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 132ms (Views: 127.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:48:16 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.8ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 96ms (Views: 93.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:48:35 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.7ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 95ms (Views: 91.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/attachments/87dfa4506a9a4f531a45577ba53d18e5dc83debf/store/fill/300/200/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" for 60.76.79.101 at 2021-08-09 22:48:35 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-09 22:48:35 +0000] GET "/87dfa4506a9a4f531a45577ba53d18e5dc83debf/store/fill/300/200/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" 200 33.4ms
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:48:43 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.7ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 97ms (Views: 94.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/attachments/db18dbfa97b02555cbaef23d5a50ba0742fae53c/store/fill/500/200/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" for 60.76.79.101 at 2021-08-09 22:48:43 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-09 22:48:43 +0000] GET "/db18dbfa97b02555cbaef23d5a50ba0742fae53c/store/fill/500/200/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" 200 34.5ms
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:48:52 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.5ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 100ms (Views: 96.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/attachments/e9372a9f9a268253689bdf7cd591924a81bcc6c4/store/fill/500/300/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" for 60.76.79.101 at 2021-08-09 22:48:52 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2021-08-09 22:48:52 +0000] GET "/e9372a9f9a268253689bdf7cd591924a81bcc6c4/store/fill/500/300/2dc8fc23396b3975238010c758dde6ca303f518c47d07557be34f327158e/image" 200 39.0ms
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:50:03 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.0ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 120ms (Views: 118.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:52:07 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.7ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 102ms (Views: 99.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:52:45 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.8ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 111ms (Views: 108.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:53:05 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (0.8ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 105ms (Views: 102.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:54:12 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (4.8ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 108ms (Views: 107.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:54:23 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.6ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 169ms (Views: 168.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 60.76.79.101 at 2021-08-09 22:55:03 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  Rendered public/products/show.html.erb within layouts/application (1.4ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 92ms (Views: 89.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:55:08 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.2ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 96ms (Views: 95.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members/1" for 60.76.79.101 at 2021-08-09 22:55:09 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  Rendered public/members/show.html.erb within layouts/application (0.7ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 119ms (Views: 114.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:55:12 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (5.2ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members/1" for 60.76.79.101 at 2021-08-09 22:55:13 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  Rendered public/members/show.html.erb within layouts/application (0.6ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 93ms (Views: 90.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 60.76.79.101 at 2021-08-09 22:55:22 +0000
+Cannot render console from 60.76.79.101! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:16
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:18
+  Rendered public/products/index.html.erb within layouts/application (4.5ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 122ms (Views: 120.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRecipes (20210809225816)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210809225816_create_recipes.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "member_id" integer, "product_id" integer, "name" varchar, "image_id" varchar, "introduction" text, "kodawari" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210809225816_create_recipes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210809225816"]]
+  ↳ bin/rails:9
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
