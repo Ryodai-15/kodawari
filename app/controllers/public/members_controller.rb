@@ -36,7 +36,7 @@ class Public::MembersController < ApplicationController
   private
   
   def member_params
-    params.require(:member).permit(:name, :introduction, :is_deleted, :email)
+    params.require(:member).permit(:name, :introduction, :image, :is_deleted, :email)
   end
     
 end
