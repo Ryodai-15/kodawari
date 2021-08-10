@@ -5,6 +5,8 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :products, dependent: :destroy
+  
+  attachment :image
          
   # // falseならtrueを返すようにしている
   def active_for_authentication?

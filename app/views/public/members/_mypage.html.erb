@@ -1,0 +1,25 @@
+<!--render 'public/members/mypage', member: @member-->
+
+<table class='table'>
+  <tr>
+    <div class = "profile-img" >
+      <%= attachment_image_tag member, :image, :fill, 100, 100, fallback: "no_image.jpg", class:"prifile_img"  %>  
+    </div>
+  </tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= member.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th><%= member.introduction %></th>
+  </tr>
+</table>
+
+<div class='row'>
+  <%= link_to "いいねレシピ一覧", root_path, class: "btn btn-primary" %>
+</div>
+
+<div class='row'>
+  <%= link_to "編集する", edit_member_path(member.id), class: "btn btn-success" %>
+</div>
