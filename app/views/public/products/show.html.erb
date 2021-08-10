@@ -1,15 +1,7 @@
 <div class="container">
   <div class="row my-5">
     <div class="col-sm-3">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <td>マイページ</td>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <%= render 'public/members/mypage', member: current_member %>
     </div>
 
     <div class="col-sm-6">
@@ -26,12 +18,15 @@
               <p class="card-title">
                 <%= @product.kodawari %>
               </p>
+              <p class="card-title">
+                <%= link_to "レシピを投稿する", new_product_recipe_path(@product.id) ,class:"btn btn-primary" %>
+              </p>
           </div>
         </div>
       </div>        
     </div>
     <div class="col-sm-3">
-      レシピ一覧が入る
+      <%= render 'public/recipes/recipe', recipes: @recipes %>
     </div>
   </div>
 </div>

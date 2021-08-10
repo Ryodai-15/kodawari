@@ -7,6 +7,13 @@
     <div class = "row">
       <table class="table-borderless-form">
             <tr>
+              <td>プロフィール画面</td>
+              <td>
+                  <%= attachment_image_tag @member, :image, :fill, 60, 60, fallback: "no_image.jpg"%>
+                  <%= f.attachment_field :image, placeholder: "プロフィール画像" %>
+              </td>
+            </tr>
+            <tr>
               <td>ニックネーム</td>
               <td><%= f.text_field :name %></td>
             </tr>

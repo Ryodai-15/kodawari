@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-sm-3">
+      <%= render 'public/members/mypage', member: current_member %>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="d-flex flex-wrap">
+        <div class="flex-item">
+          <div class="card　border-0">
+              <%= attachment_image_tag @recipe, :image, :fill, 500, 300 %>
+              <p class="card-title">
+                <%= @recipe.name %>
+              </p>
+              <p class="card-title">
+                <%= @recipe.introduction %>
+              </p>
+              <p class="card-title">
+                <%= @recipe.kodawari %>
+              </p>
+              <p class="card-title">
+                <%= link_to "レシピを編集する", edit_product_recipe_path(@recipe.product_id,@recipe.id) ,class:"btn btn-primary" %>
+              </p>
+              <p class="card-title">
+                <%= link_to "レシピを削除する", product_recipe_path(@recipe.product_id,@recipe.id),method: :delete,"data-confirm" => "本当に削除しますか？" ,class:"btn btn-danger" %>
+              </p>
+          </div>
+        </div>
+      </div>        
+    </div>
+  </div>
+</div>
