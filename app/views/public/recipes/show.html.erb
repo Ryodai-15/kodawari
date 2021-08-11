@@ -19,6 +19,9 @@
                 <%= @recipe.kodawari %>
               </p>
               <p class="card-title">
+                <%= render 'public/favorites/favorite', recipe: @recipe %>
+              </p>
+              <p class="card-title">
                 <%= link_to "レシピを編集する", edit_product_recipe_path(@recipe.product_id,@recipe.id) ,class:"btn btn-primary" %>
               </p>
               <p class="card-title">
