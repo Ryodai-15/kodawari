@@ -19,6 +19,16 @@
 
 // プロフィール画面の枠を丸くする
 
-.profile-img {
-  border-radius:90px;
+.profile-img img{
+  border-radius: 90px;
+}
+
+// いいね赤いハート
+.heart_red{
+  color: red;
+}
+
+// いいね青いハート
+.heart_blue{
+  color: blue;
 }
