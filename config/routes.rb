@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :show] do
       resources :recipes do
         resource :favorites, only: [:create, :destroy]
+        resources :reviews, only: [:index, :create]
       end
     end
   end

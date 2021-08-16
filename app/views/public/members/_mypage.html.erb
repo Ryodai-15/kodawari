@@ -1,25 +1,24 @@
 <!--render 'public/members/mypage', member: @member-->
 
-<table class='table'>
-  <tr>
-    <div class = "profile-img" >
-      <%= attachment_image_tag member, :image, :fill, 100, 100, fallback: "no_image.jpg", class:"prifile_img"  %>  
-    </div>
-  </tr>
-  <tr>
-	  <th>name</th>
-	  <th><%= member.name %></th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th><%= member.introduction %></th>
-  </tr>
-</table>
-
-<div class='row'>
-  <%= link_to "いいねレシピ一覧", root_path, class: "btn btn-primary" %>
+<!--プロフィール画を表示-->
+<div class = "profile-img" >
+  <%= attachment_image_tag member, :image, :fill, 100, 100, fallback: "no_image.jpg", class:"prifile_img"  %>  
+</div>
+<!--会員情報を表示-->
+<div class = "information" >
+  <p><strong>ニックネーム</strong></p>
+  <p><%= member.name %></p>
+  <p><strong>introduction</strong></p>
+  <P><%= member.introduction %></P>
 </div>
 
-<div class='row'>
-  <%= link_to "編集する", edit_member_path(member.id), class: "btn btn-success" %>
+<!--いいね一覧と編集リンクボタンを表示-->
+<div class = "botton" >
+  <div class='favorite-botton'>
+    <%= link_to "いいねレシピ一覧", root_path, class: "btn btn-primary" %>
+  </div>
+  
+  <div class='edit-botton'>
+    <%= link_to "編集する", edit_member_path(member.id), class: "btn btn-success" %>
+  </div>  
 </div>

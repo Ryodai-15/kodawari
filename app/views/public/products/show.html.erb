@@ -7,7 +7,7 @@
     <div class="col-sm-6">
       <div class="d-flex flex-wrap">
         <div class="flex-item">
-          <div class="card　border-0">
+          <div class="card border-0">
               <%= attachment_image_tag @product, :image, :fill, 500, 300 %>
               <p class="card-title">
                 <%= @product.name %>
@@ -25,6 +25,7 @@
         </div>
       </div>        
     </div>
+    
     <div class="col-sm-3">
       <%= render 'public/recipes/recipe', recipes: @recipes %>
     </div>
