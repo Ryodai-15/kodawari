@@ -1,13 +1,21 @@
 <div class="container">
   <div class="row my-5">
     <div class="col-sm-3">
-      <%= render 'public/members/mypage', member: current_member %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>マイページ</td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
 
     <div class="col-sm-6">
       <div class="d-flex flex-wrap">
         <div class="flex-item">
-          <div class="card border-0">
+          <div class="card　border-0">
               <%= attachment_image_tag @product, :image, :fill, 500, 300 %>
               <p class="card-title">
                 <%= @product.name %>
@@ -18,16 +26,12 @@
               <p class="card-title">
                 <%= @product.kodawari %>
               </p>
-              <p class="card-title">
-                <%= link_to "レシピを投稿する", new_product_recipe_path(@product.id) ,class:"btn btn-primary" %>
-              </p>
           </div>
         </div>
       </div>        
     </div>
-    
     <div class="col-sm-3">
-      <%= render 'public/recipes/recipe', recipes: @recipes %>
+      レシピ一覧が入る
     </div>
   </div>
 </div>

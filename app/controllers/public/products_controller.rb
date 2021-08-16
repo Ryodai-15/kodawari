@@ -6,7 +6,6 @@ class Public::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @recipes = Recipe.all
   end
 
 
