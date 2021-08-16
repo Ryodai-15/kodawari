@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     resources :members, only: [:show, :edit, :update] do
+      # collectionはidを付与させなくする
       collection do
         get 'unsubscribe'
         patch 'withdraw'
@@ -17,7 +18,10 @@ Rails.application.routes.draw do
     end
     
     resources :products, only: [:index, :show] do
-      resources :recipes
+      resources :recipes do
+        resource :favorites, only: [:create, :destroy]
+        resources :reviews, only: [:index, :create]
+      end
     end
   end
   

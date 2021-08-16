@@ -1,15 +1,7 @@
 <div class="container">
   <div class="row my-5">
     <div class="col-sm-3">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <td>マイページ</td>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <%= render 'public/members/mypage', member: current_member %>
     </div>
     
     <div class="col-sm-9">
