@@ -29780,3 +29780,273 @@ Processing by Public::MembersController#show as HTML
 Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 118.238.204.135 at 2021-08-16 02:51:20 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::HomesController#top as HTML
+  Rendering public/homes/top.html.erb within layouts/application
+  Rendered public/homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 254ms (Views: 246.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/members/1" for 118.238.204.135 at 2021-08-16 02:51:22 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/members/show.html.erb:5
+  Rendered public/members/_mypage.html.erb (1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:5
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:7
+  Rendered public/recipes/_recipe.html.erb (10.8ms)
+  Rendered public/members/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 62ms (Views: 53.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products/1/recipes/1" for 118.238.204.135 at 2021-08-16 02:51:23 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::RecipesController#show as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/recipes_controller.rb:25
+  Rendering public/recipes/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/recipes/show.html.erb:4
+  Rendered public/members/_mypage.html.erb (1.6ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."recipe_id" = ? AND "favorites"."member_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["member_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/views/public/favorites/_favorite.html.erb:6
+  Rendered public/favorites/_favorite.html.erb (15.3ms)
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/models/recipe.rb:20
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:11
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/models/recipe.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/views/public/recipes/show.html.erb:37
+  Rendered public/reviews/_form.html.erb (6.0ms)
+  Rendered public/recipes/show.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 121ms (Views: 107.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/members/1" for 118.238.204.135 at 2021-08-16 02:51:31 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/members/show.html.erb:5
+  Rendered public/members/_mypage.html.erb (1.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:5
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:7
+  Rendered public/recipes/_recipe.html.erb (4.2ms)
+  Rendered public/members/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 89ms (Views: 85.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 118.238.204.135 at 2021-08-16 02:51:32 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:4
+  Rendered public/members/_mypage.html.erb (1.0ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:8
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:10
+  Rendered public/products/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for 118.238.204.135 at 2021-08-16 02:51:33 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/products_controller.rb:8
+  Rendering public/products/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/show.html.erb:4
+  Rendered public/members/_mypage.html.erb (0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:5
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:7
+  Rendered public/recipes/_recipe.html.erb (3.0ms)
+  Rendered public/products/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 69ms (Views: 66.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/1/recipes/new" for 118.238.204.135 at 2021-08-16 02:51:36 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::RecipesController#new as HTML
+  Parameters: {"product_id"=>"1"}
+  Rendering public/recipes/new.html.erb within layouts/application
+  Rendered public/recipes/new.html.erb within layouts/application (6.3ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 76ms (Views: 74.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/1/recipes/1" for 118.238.204.135 at 2021-08-16 02:51:38 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::RecipesController#show as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/recipes_controller.rb:25
+  Rendering public/recipes/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/recipes/show.html.erb:4
+  Rendered public/members/_mypage.html.erb (0.9ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."recipe_id" = ? AND "favorites"."member_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["member_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/views/public/favorites/_favorite.html.erb:6
+  Rendered public/favorites/_favorite.html.erb (3.3ms)
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/models/recipe.rb:20
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:11
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/models/recipe.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/views/public/recipes/show.html.erb:37
+  Rendered public/reviews/_form.html.erb (2.6ms)
+  Rendered public/recipes/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 56ms (Views: 52.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/members/1/edit" for 118.238.204.135 at 2021-08-16 02:51:52 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:13
+  Rendering public/members/edit.html.erb within layouts/application
+  Rendered public/members/edit.html.erb within layouts/application (1.7ms)
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1/recipes/1" for 118.238.204.135 at 2021-08-16 02:51:57 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::RecipesController#show as HTML
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/recipes_controller.rb:25
+  Rendering public/recipes/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/recipes/show.html.erb:4
+  Rendered public/members/_mypage.html.erb (0.8ms)
+  [1m[36mFavorite Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "favorites" WHERE "favorites"."recipe_id" = ? AND "favorites"."member_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["member_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/views/public/favorites/_favorite.html.erb:6
+  Rendered public/favorites/_favorite.html.erb (3.2ms)
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/models/recipe.rb:20
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."recipe_id" = ? LIMIT ?[0m  [["recipe_id", 1], ["LIMIT", 1]]
+  ↳ app/models/recipe.rb:11
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."score") FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/models/recipe.rb:12
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  ↳ app/views/public/recipes/show.html.erb:37
+  Rendered public/reviews/_form.html.erb (2.5ms)
+  Rendered public/recipes/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 55ms (Views: 52.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/members/1" for 118.238.204.135 at 2021-08-16 02:51:59 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/members/show.html.erb:5
+  Rendered public/members/_mypage.html.erb (12.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:5
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:7
+  Rendered public/recipes/_recipe.html.erb (4.9ms)
+  Rendered public/members/show.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 63ms (Views: 60.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 118.238.204.135 at 2021-08-16 02:51:59 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ProductsController#index as HTML
+  Rendering public/products/index.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/products/index.html.erb:4
+  Rendered public/members/_mypage.html.erb (0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:8
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/public/products/index.html.erb:10
+  Rendered public/products/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/members/1" for 118.238.204.135 at 2021-08-16 02:52:00 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/members/show.html.erb:5
+  Rendered public/members/_mypage.html.erb (0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:5
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:7
+  Rendered public/recipes/_recipe.html.erb (2.8ms)
+  Rendered public/members/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/members/1" for 118.238.204.135 at 2021-08-16 02:52:02 +0000
+Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::MembersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/public/members_controller.rb:8
+  Rendering public/members/show.html.erb within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? ORDER BY "members"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/public/members/show.html.erb:5
+  Rendered public/members/_mypage.html.erb (0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:5
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/public/recipes/_recipe.html.erb:7
+  Rendered public/recipes/_recipe.html.erb (3.0ms)
+  Rendered public/members/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 61ms (Views: 58.8ms | ActiveRecord: 0.5ms)
+
+
