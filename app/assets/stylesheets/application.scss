@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+
+// プロフィール画面の枠を丸くする・画面中央に配置
+
+.profile-img img{
+  border-radius: 90px;
+  width: 60%;
+  margin: 20px 50px; 
+}
+
+// プロフィールボタンの間隔をあける
+
+.botton{
+  margin: 20px 0;
+}
+
+// いいね一覧ボタンを真ん中に寄せる
+
+.favorite-botton{
+  margin: 20px 0;
+  text-align: center;
+}
+
+// 編集ボタンを真ん中に寄せる
+
+.edit-botton{
+  margin: 20px 0;
+  text-align: center;
+}
+
+// いいね赤いハート
+.heart_red{
+  color: red;
+}
+
+// いいね青いハート
+.heart_blue{
+  color: blue;
+}
+
+// 全体の色を装飾
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  font-family: sans-serif;
+}
+
+// レビュー星の色つけ
+
+.rating-box .ratings .fa{
+  font-size: 30px;
+  color:#ffcc00;
+  cursor: pointer;
+}
+
+.main-rating {
+  display: flex;
+}
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  color: #ccc;
+}
+
+.average-score {
+  display: flex;
+}
+.average-score-display {
+  font-size: 16px;
+}
+
+
+
+
+// サイドバーに枠線をつける
+
+.sidebar {
+  border: solid;
+  border: 4px solid;
+  border-color: #031de2;
+}

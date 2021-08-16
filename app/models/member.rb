@@ -3,4 +3,16 @@ class Member < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  has_many :products, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  
+  attachment :image
+         
+  # // falseならtrueを返すようにしている
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
+         
 end
