@@ -27,6 +27,18 @@
               <p class="card-title">
                 <%= link_to "レシピを削除する", product_recipe_path(@recipe.product_id,@recipe.id),method: :delete,"data-confirm" => "本当に削除しますか？" ,class:"btn btn-danger" %>
               </p>
+              <div class="card-content">
+                <div class="content average-score">
+                  <div class="star-rating mb-2">
+                    <div class="star-rating-front" style="width: <%= @recipe.review_score_percentage %>%">★★★★★</div>
+                    <div class="star-rating-back">★★★★★</div>
+                  </div>
+                  <div class="average-score-display ml-3 pt-2">
+                    <%= @recipe.avg_score %>点 （<%= @recipe.reviews.count %>件のレビュー）
+                  </div>
+                </div>
+              </div>
+              <%= render 'public/reviews/form', review: @review, recipe: @recipe %>
           </div>
         </div>
       </div>        
