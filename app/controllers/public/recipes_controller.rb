@@ -38,13 +38,13 @@ class Public::RecipesController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to products_path
   end
-    
+
 
   private
 
