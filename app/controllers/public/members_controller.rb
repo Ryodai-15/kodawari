@@ -1,12 +1,18 @@
 class Public::MembersController < ApplicationController
 
+  before_action :authenticate_member!
+
+  before_action :correct_member, only: [:edit, :update]
+
+
   def index
     @members = Member.all
   end
 
   def show
     @member = Member.find(params[:id])
-    @recipes = Recipe.all
+    # 要変更（現在メンバー関係なく、レシピをすべて表示できている
+    @recipes = @member.recipes
   end
 
   def edit
@@ -34,10 +40,21 @@ class Public::MembersController < ApplicationController
     redirect_to root_path
   end
 
+  def favorites
+    @recipe = Recipe.find(params[:id])
+    @favorites = Favorite.where(member_id: current_member.id)
+  end
+
   private
 
   def member_params
     params.require(:member).permit(:name, :introduction, :image, :is_deleted, :email)
   end
 
+  def correct_member
+    @member = Member.find(params[:id])
+    if current_member != @member
+      redirect_to root_path
+    end
+  end
 end

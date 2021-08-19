@@ -6,11 +6,12 @@ class Public::ReviewsController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.find(params[:recipe_id])
     @review = Review.new(review_params)
     @review.recipe_id = params[:recipe_id]
     @review.member_id = current_member.id
     if @review.save
-      redirect_to root_path
+      redirect_to product_recipe_path(@recipe.product_id, @recipe.id)
     else
       @recipe = Recipe.find(params[:id])
       render "recipes/show"
