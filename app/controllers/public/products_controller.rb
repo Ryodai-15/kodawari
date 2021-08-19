@@ -6,7 +6,9 @@ class Public::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @recipes = Recipe.all
+    # @recipes = Recipe.all
+    # 商品に紐付いたレシピを表示したい
+    @recipes = @product.recipes
   end
 
 

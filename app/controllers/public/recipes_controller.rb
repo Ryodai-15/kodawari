@@ -1,4 +1,8 @@
 class Public::RecipesController < ApplicationController
+  
+  before_action :authenticate_member!
+  
+  before_action :correct_member, only: [:edit, :update]
 
   def new
     @recipe = Recipe.new
@@ -52,5 +56,14 @@ class Public::RecipesController < ApplicationController
       params.require(:recipe).permit(:image, :name, :introduction, :kodawari)
     end
 
+    def correct_member
+      @recipe = Recipe.find(params[:id])
+      # idをもとに投稿を特定
+      @member = @recipe.member
+      # 特定された投稿に紐づく、memberを特定し、@memberをいれる
+      if current_member != @member
+        redirect_to root_path
+      end
+    end
 
 end

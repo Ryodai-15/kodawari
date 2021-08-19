@@ -4,6 +4,12 @@ class Public::Members::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   before_action :reject_customer, only: [:create]
+  
+  def guest_sign_in
+    member = Member.guest
+    sign_in member
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
 
   # GET /resource/sign_in
   # def new

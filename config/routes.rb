@@ -2,6 +2,13 @@ Rails.application.routes.draw do
 
   root :to => "public/homes#top"
   get "home/about" => "public/homes#about"
+  
+  # ゲストログイン機能
+  post '/homes/guest_sign_in', to: 'public/homes#guest_sign_in'
+   
+  devise_scope :member do
+    post 'members/guest_sign_in', to: 'public/members/sessions#guest_sign_in'
+  end
 
  devise_for :members , :controllers => {
      :sessions => 'public/members/sessions',
@@ -16,6 +23,8 @@ Rails.application.routes.draw do
         patch 'withdraw'
       end
     end
+    
+    get "members/:id/favorites" => "members#favorites", as: 'member_favorites'
     
     resources :products, only: [:index, :show] do
       resources :recipes do

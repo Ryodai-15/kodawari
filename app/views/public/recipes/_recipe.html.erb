@@ -2,7 +2,7 @@
 
 
 <div class="recipe-index">
-  <p>レシピ一覧(全<%= Recipe.count %>件)</p>
+  <p>レシピ一覧(全<%= recipes.count %>件)</p>
   <div class="d-flex flex-wrap">
     <% recipes.each do |recipe| %>
     <div class="flex-item">
