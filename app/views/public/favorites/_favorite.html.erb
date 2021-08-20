@@ -2,13 +2,13 @@
 
 <% if recipe.favorited_by?(current_member) %>
     <p>
-      <%= link_to product_recipe_favorites_path(recipe.product_id, recipe.id), method: :delete do %>
+      <%= link_to product_recipe_favorites_path(recipe.product_id, recipe.id), method: :delete, remote: true do %>
         <i class="fas fa-heart heart_red"></i><%= recipe.favorites.count %> いいね
       <% end %>
     </p>
     <% else %>
     <p>
-      <%= link_to product_recipe_favorites_path(recipe.product_id, recipe.id), method: :post do %>
+      <%= link_to product_recipe_favorites_path(recipe.product_id, recipe.id), method: :post, remote: true do %>
         <i class="fas fa-heart heart_blue"></i><%= recipe.favorites.count %> いいね
       <% end %>
     </p>

@@ -3,3 +3,15 @@ ja:
     attributes:
       member:
         name: '名前'
+      
+ja:
+  enums: 
+    talk: # モデル名
+      contributor: # カラム名
+        customer: '会員' # enumの値
+        shop: '店舗' # enumの値
+        admin: '管理者' # enumの値
+    customer: # モデル名
+      privacy: # カラム名
+        published: 公開 # enumの値
+        closed: 非公開 # enumの値
