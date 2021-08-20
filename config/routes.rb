@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   devise_scope :member do
     post 'members/guest_sign_in', to: 'public/members/sessions#guest_sign_in'
   end
+  
+  # 検索機能ルーティング
+  get '/search', to: 'public/searchs#search'
 
  devise_for :members , :controllers => {
      :sessions => 'public/members/sessions',
