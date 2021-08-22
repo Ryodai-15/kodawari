@@ -1,1 +1,62 @@
-アボウトページです
+
+お問い合わせは<%= link_to "こちら" , new_contact_path %>
+
+<h3>gmap</h3>
+<!-- id=mapのclassに登録住所を代入。 -->
+<div id='map' class="こだわり家金子精肉店"></div>
+
+<!-- id=mapの大きさを指定。※stylesheetにまとめてもOK -->
+<style>
+#map{
+  height: 400px;
+  width: 50%;
+  margin: 0 auto;
+}
+</style>
+
+<script>
+// 下記codeAddressでも使うため、mapを関数の外で定義、geocoderも用意
+let map
+let geocoder
+
+function initMap(){
+  // geocoderを初期化
+  geocoder = new google.maps.Geocoder()
+  // geocoderのgeocode()methodで、経緯緯度をGeocoderAPIにリクエストを送信。
+  // geocode()methodでaddressにid=mapのclassの登録住所を代入し、経緯緯度を取得。
+  geocoder.geocode( { 'address': $('#map').attr('class')}, function(results, status) {
+    // もしエラーがなければ、
+    if (status == 'OK') {
+    // map.setCenterで上記記述の経緯緯度に地図が移動。
+      map.setCenter(results[0].geometry.location);
+
+    // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    // エラーが出た場合には
+    } else {
+    // statusにエラー状況が表示されるので、その文言を調べれば解決できます。
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+
+  // mapの初期位置を指定。
+  // latは経緯、lngは緯度。（下記は東京駅を指定しています）
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -35.6809591, lng: 139.7673068},
+  // お好みでズームサイズを変更できます。
+  // 数字が大きければ、拡大です。
+  zoom: 18
+  });
+}
+
+function codeAddress(){
+  // 入力を取得
+  let inputAddress = document.getElementById('address').value;
+  // geocodingしたあとmapを移動
+}
+</script>
+<!-- GoogleAPIキーを読み込むための記述になります。 -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['SECRET_KEY'] %>&callback=initMap" async defer></script>

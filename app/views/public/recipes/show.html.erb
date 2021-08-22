@@ -18,9 +18,9 @@
               <p class="card-title">
                 <%= @recipe.kodawari %>
               </p>
-              <p class="card-title">
+              <div class="favorite-btn-<%= @recipe.id %>">
                 <%= render 'public/favorites/favorite', recipe: @recipe %>
-              </p> 
+              </div>
               <% if @recipe.member == current_member %>
                 <p class="card-title">
                   <%= link_to "レシピを編集する", edit_product_recipe_path(@recipe.product_id,@recipe.id) ,class:"btn btn-primary" %>
@@ -43,7 +43,7 @@
               <%= render 'public/reviews/form', review: @review, recipe: @recipe %>
           </div>
         </div>
-      </div>        
+      </div>
     </div>
   </div>
 </div>
