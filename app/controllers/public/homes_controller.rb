@@ -5,6 +5,7 @@ class Public::HomesController < ApplicationController
   end
 
   def about
+    
   end
 
   def guest_sign_in
