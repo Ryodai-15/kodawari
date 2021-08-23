@@ -21,7 +21,7 @@
         <table class="table is-fullwidth has-text-centered">
           <thead>
             <tr>
-              <th>ユーザー</th><th>点数</th><th>内容</th>
+              <th>ユーザー</th><th>点数</th><th>内容</th><th></th>
             </tr>
           </thead>
           <tbody>
@@ -30,6 +30,9 @@
                 <td><%= review.member.name %></td>
                 <td><%= review.score %></td>
                 <td><%= review.comment %></td>
+                <% if review.member == current_member %>
+                  <td><%= link_to "レビューを削除する", product_recipe_review_path(@recipe.product_id, @recipe.id, review.id),method: :delete,"data-confirm" => "本当に削除しますか？" ,class:"btn btn-danger" %></td>
+                <% end %>
               </tr>
             <% end %>
           </tbody>

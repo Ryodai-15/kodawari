@@ -18,6 +18,20 @@ class Public::ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    review = @recipe.reviews.find(params[:id])
+    # @review.recipe_id = params[:recipe_id]
+    # @review.member_id = current_member.id
+    if current_member.id == review.member.id
+      review.destroy
+      redirect_to product_recipe_path(@recipe.product_id, @recipe.id)
+    else
+       @reviews = @recipe.reviews
+       render "public/reviews/index"
+    end
+  end
+
   private
 
   def review_params
