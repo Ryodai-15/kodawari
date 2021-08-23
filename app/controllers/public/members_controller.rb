@@ -41,8 +41,8 @@ class Public::MembersController < ApplicationController
   end
 
   def favorites
-    @recipe = Recipe.find(params[:id])
     @favorites = Favorite.where(member_id: current_member.id)
+    @recipe = Recipe.find(params[:id])
   end
 
   private

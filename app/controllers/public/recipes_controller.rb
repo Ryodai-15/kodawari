@@ -1,7 +1,7 @@
 class Public::RecipesController < ApplicationController
-  
+
   before_action :authenticate_member!
-  
+
   before_action :correct_member, only: [:edit, :update]
 
   def new
@@ -42,13 +42,13 @@ class Public::RecipesController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to products_path
   end
-    
+
 
   private
 
