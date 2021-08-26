@@ -8,8 +8,8 @@
     <div class="flex-recipe">
       <div class="card　border-0">
         <%= link_to product_recipe_path(recipe.product_id,recipe.id) do %>
-          <%= attachment_image_tag recipe, :image, :fill, 170, 100, fallback: "noimage.jpg", class:"recipe_img" %>
-          <p class="card-title">
+          <%= attachment_image_tag recipe, :image, :fill, 170, 100, fallback: "noimage.jpg", class:"recipe-img" %>
+          <p class="recipe-title">
             <%= recipe.name %>
           </p>
         <% end %>
@@ -17,5 +17,5 @@
     </div>
     <% end %>
   </div>
-  <!--<= paginate recipes %>-->
+  <%= paginate recipes %>
 </div>

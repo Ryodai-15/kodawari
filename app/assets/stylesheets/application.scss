@@ -367,9 +367,13 @@ table.table-borderless-form {
 
 .recipe-img {
   width: 170px;
-  height:　100px;
+  height: 100px;
 }
 
+.recipe-show-img {
+  width: 500px;
+  height:　300px;
+}
 
 .flex-recipe {
   display: flex;
@@ -377,8 +381,10 @@ table.table-borderless-form {
   margin: 20px;
 }
 
-
-// レシピ作成ボタンの中央寄せ
+.recipe-title {
+  margin: 10px;
+  text-align: center;
+}
 
 .recipe-create {
   margin: 0 170px;

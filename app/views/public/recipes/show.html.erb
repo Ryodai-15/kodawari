@@ -8,7 +8,7 @@
       <div class="d-flex flex-wrap">
         <div class="flex-item">
           <div class="card　border-0">
-              <%= attachment_image_tag @recipe, :image, :fill, 500, 300, fallback: "noimage.jpg", class:"recipe_img" %>
+              <%= attachment_image_tag @recipe, :image, :fill, 500, 300, fallback: "noimage.jpg", class:"recipe-show-img" %>
               <p class="card-title">
                 <%= @recipe.name %>
               </p>
@@ -30,7 +30,7 @@
                   </p>
                 </div>
               <% end %>
-              
+
               <div class="favorite-btn-<%= @recipe.id %>">
                 <%= render 'public/favorites/favorite', recipe: @recipe %>
               </div>

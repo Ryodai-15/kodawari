@@ -8,7 +8,7 @@ class Public::MembersController < ApplicationController
   def show
     @member = Member.find(params[:id])
     # 要変更（現在メンバー関係なく、レシピをすべて表示できている
-    @recipes = @member.recipes
+    @recipes = @member.recipes.page(params[:page]).per(6)
   end
 
   def edit
@@ -37,8 +37,7 @@ class Public::MembersController < ApplicationController
   end
 
   def favorites
-    @favorites = Favorite.where(member_id: current_member.id)
-    @favorites = Favorite.page(params[:page]).per(6)
+    @favorites = Favorite.where(member_id: current_member.id).page(params[:page]).per(6)
   end
 
   private

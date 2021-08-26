@@ -9,7 +9,7 @@ class Public::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     # @recipes = Recipe.all
     # 商品に紐付いたレシピを表示したい
-    @recipes = @product.recipes
+    @recipes = @product.recipes.page(params[:page]).per(3)
   end
 
 
