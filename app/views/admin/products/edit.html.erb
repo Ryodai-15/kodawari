@@ -13,7 +13,7 @@
 
 <div class="container">
   <div class="row text-right mt-4">
-    <div class="col-sm-4">
+    <div class="col-sm-7">
       <h4>商品編集</h4>
     </div>
   </div>
@@ -21,7 +21,7 @@
   <%= form_with model: [:admin, @product], local:true do |f| %>
     <div class="row">
       <div class="col-sm-10 offset-2">
-        <table class="table-borderless-item">
+        <table class="table-borderless-form">
           <tr>
             <div>
               <td><%= f.label :商品画像 %></td>
@@ -37,13 +37,13 @@
           <tr>
             <div class="col-sm-2">
               <td><%= f.label :商品説明 %></td>
-              <td><%= f.text_area :introduction, class:"form-control", autofocus: true %></td>
+              <td><%= f.text_area :introduction, class:"form-control", autofocus: true, class: 'form-size' %></td>
             </div>
           </tr>
           <tr>
             <div>
               <td><%= f.label :商品のこだわり %></td>
-              <td><%= f.text_area :kodawari, class:"form-control", autofocus: true %></td>
+              <td><%= f.text_area :kodawari, class:"form-control", autofocus: true, class: 'form-size' %></td>
             </div>
           </tr>
         </table>

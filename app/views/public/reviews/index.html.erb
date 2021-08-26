@@ -28,7 +28,7 @@
               <tr>
                 <td><%= review.member.name %></td>
                 <td><%= review.score %></td>
-                <td><%= review.comment %></td>
+                <td><%= simple_format(review.comment) %></td>
                 <% if review.member == current_member %>
                   <td><%= link_to "レビューを削除する", product_recipe_review_path(@recipe.product_id, @recipe.id, review.id),method: :delete,"data-confirm" => "本当に削除しますか？" ,class:"btn btn-danger" %></td>
                 <% end %>

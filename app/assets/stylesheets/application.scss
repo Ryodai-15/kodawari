@@ -328,13 +328,23 @@ div.notification {
   flex-wrap: wrap;
 }
 
+// 入力フォームの編集
 
 .form-size {
-  width: 200%;
+  width: 700px;
   height: 200px;
 }
 
 table.table-borderless-form {
   border-collapse:separate;
 	border-spacing: 50px 20px;
+}
+
+.review-form {
+  width: 500px;
+  height: 150px;
+}
+
+.form-mini {
+  width: 700px;
 }
