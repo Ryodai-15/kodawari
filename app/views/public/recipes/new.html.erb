@@ -1,36 +1,48 @@
+<!--バリデーションメッセージ-->
+<% if @recipe.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= @recipe.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container">
   <div class="row text-right mt-4">
-    <div class="col-sm-4">
+    <div class="col-sm-8">
       <h4>レシピ新規投稿</h4>
     </div>
   </div>
 
   <%= form_with model: @recipe, url: product_recipes_path, local:true do |f| %>
     <div class="row">
-      <div class="col-sm-10 offset-2">
-        <table class="table-borderless-item">
+      <div class="col-sm-11 offset-1">
+        <table class="table-borderless-form">
           <tr>
-            <div>
+            <div class="recipe-form">
               <td><%= f.label :レシピ画像 %></td>
               <td><%= f.attachment_field :image %></td>
             </div>
           </tr>
           <tr>
-            <div class="col-sm-2">
+            <div class="recipe-form">
               <td><%= f.label :レシピ名 %></td>
               <td><%= f.text_field :name, class:"form-control", placeholder: "商品名" %></td>
             </div>
           </tr>
           <tr>
-            <div class="col-sm-2">
+            <div class="recipe-form">
               <td><%= f.label :レシピ説明 %></td>
-              <td><%= f.text_area :introduction, class:"form-control", placeholder: "ここに説明文を記述します" %></td>
+              <td><%= f.text_area :introduction, class:"form-control", placeholder: "ここに説明文を記述します", class: 'form-size' %></td>
             </div>
           </tr>
           <tr>
-            <div>
+            <div class="recipe-form">
               <td><%= f.label :レシピのこだわり %></td>
-              <td><%= f.text_area :kodawari, class:"form-control", placeholder: "ここにレシピのこだわりを記述します" %></td>
+              <td><%= f.text_area :kodawari, class:"form-control", placeholder: "ここにレシピのこだわりを記述します", class: 'form-size' %></td>
             </div>
           </tr>
         </table>

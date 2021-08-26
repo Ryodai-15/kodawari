@@ -11,7 +11,7 @@
         <%= attachment_image_tag @product, :image, :fill, 350, 250 %>
       </div>
     </div>
-  
+
     <div class="col-sm-6">
       <form>
         <table class="table table-borderless">
@@ -22,11 +22,11 @@
             </tr>
             <tr>
               <td>商品説明</td>
-              <td><%= @product.introduction %></td>
+              <td><%= simple_format(@product.introduction) %></td>
             </tr>
             <tr>
               <td>商品のこだわり</td>
-              <td><%= @product.kodawari %></td>
+              <td><%= simple_format(@product.kodawari) %></td>
             </tr>
           </tbody>
         </table>

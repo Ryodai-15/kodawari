@@ -13,10 +13,12 @@
                 <%= @product.name %>
               </p>
               <p class="card-title">
-                <%= @product.introduction %>
+                <%= simple_format(@product.introduction) %>
+                <!--<= @product.introduction %>-->
               </p>
               <p class="card-title">
-                <%= @product.kodawari %>
+                <%= simple_format(@product.kodawari) %>
+                <!--<= @product.kodawari %>-->
               </p>
               <p class="card-title">
                 <%= link_to "レシピを投稿する", new_product_recipe_path(@product.id) ,class:"btn btn-primary" %>

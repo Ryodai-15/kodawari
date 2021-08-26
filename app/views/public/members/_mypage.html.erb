@@ -9,16 +9,16 @@
   <p><strong>ニックネーム</strong></p>
   <p><%= member.name %></p>
   <p><strong>introduction</strong></p>
-  <P><%= member.introduction %></P>
+  <P><%= simple_format(member.introduction) %></P>
 </div>
 
 <!--いいね一覧と編集リンクボタンを表示-->
 <div class = "botton" >
   <div class='favorite-botton'>
-    <%= link_to "いいねレシピ一覧", member_favorites_path(member.id), class: "btn btn-primary" %>
+    <%= link_to "Myいいねレシピ一覧", member_favorites_path(member.id), class: "btn btn-primary" %>
   </div>
 
   <div class='edit-botton'>
-    <%= link_to "編集する", edit_member_path(member.id), class: "btn btn-success" %>
+    <%= link_to "会員情報を編集する", edit_member_path(member.id), class: "btn btn-success" %>
   </div>
 </div>

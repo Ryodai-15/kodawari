@@ -1,7 +1,26 @@
+<div class="container">
+  <div class="row my-5">
+<!--いいねレシピtop5を表示-->
+    <div class="col-sm-5">
+      <div class = "sidebar" >
+        <div class = "col-sm-9 offset-sm-3 about-image"></div>
+      </div>
+    </div>
+<!--店舗写真と紹介文-->
+    <div class="col-sm-7">
+      <div class = "mx-auto home-about">
+      <h3><strong>横浜の住宅街にポツンとある小さなハム工房！</strong></h3>
+      <p>和牛コンビーフや和牛ローストビーフなど、お肉の幸せの味届けます♪</p>
+      <p>全国銘柄和牛（宮崎牛・鹿児島和牛・くまもと和牛）やかごしま黒豚なども取り扱ってます！</p>
+      <p>お問い合わせお気軽にどうぞ。<%= link_to '',new_contact_path,class: "btn fas fa-link " %>
+        <!--<= link_to "こちら" , new_contact_path %>-->
+      </p>
+    </div>
+    </div>
+  </div>
+</div>
 
-お問い合わせは<%= link_to "こちら" , new_contact_path %>
-
-<h3>gmap</h3>
+<p class = "address" >所在地: 〒232-0071 神奈川県横浜市南区永田北３丁目２５−３４</p>
 <!-- id=mapのclassに登録住所を代入。 -->
 <div id='map' class="こだわり家金子精肉店"></div>
 

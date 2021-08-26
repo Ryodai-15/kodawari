@@ -21,8 +21,8 @@ class Public::RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
-    # @items = Item.page(params[:page]).per(10)
+    # @recipes = Recipe.all
+    @recipes = Recipe.page(params[:page]).per(3)
   end
 
   def show

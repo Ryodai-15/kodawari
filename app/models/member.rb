@@ -14,9 +14,10 @@ class Member < ApplicationRecord
   def active_for_authentication?
     super && (self.is_deleted == false)
   end
-  
+
   validates :name, presence: true
-  
+  validates :email,presence: true
+
   # ゲストログインのための記述
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

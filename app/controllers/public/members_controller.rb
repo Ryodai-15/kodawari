@@ -5,10 +5,6 @@ class Public::MembersController < ApplicationController
   before_action :correct_member, only: [:edit, :update]
 
 
-  def index
-    @members = Member.all
-  end
-
   def show
     @member = Member.find(params[:id])
     # 要変更（現在メンバー関係なく、レシピをすべて表示できている
@@ -42,7 +38,7 @@ class Public::MembersController < ApplicationController
 
   def favorites
     @favorites = Favorite.where(member_id: current_member.id)
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.where(member_id: current_member.id)
   end
 
   private

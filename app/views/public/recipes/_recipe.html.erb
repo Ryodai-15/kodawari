@@ -8,7 +8,7 @@
     <div class="flex-item">
       <div class="card　border-0">
         <%= link_to product_recipe_path(recipe.product_id,recipe.id) do %>
-          <%= attachment_image_tag recipe, :image, :fill, 170, 100 %>
+          <%= attachment_image_tag recipe, :image, :fill, 170, 100, fallback: "noimage.jpg", class:"recipe_img" %>
           <p class="card-title">
             <%= recipe.name %>
           </p>
@@ -16,5 +16,6 @@
       </div>
     </div>
     <% end %>
-  </div>        
+  </div>
+  <!--<= paginate recipes %>-->
 </div>
