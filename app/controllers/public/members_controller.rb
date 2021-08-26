@@ -38,7 +38,7 @@ class Public::MembersController < ApplicationController
 
   def favorites
     @favorites = Favorite.where(member_id: current_member.id)
-    @recipe = Recipe.where(member_id: current_member.id)
+    @favorites = Favorite.page(params[:page]).per(6)
   end
 
   private

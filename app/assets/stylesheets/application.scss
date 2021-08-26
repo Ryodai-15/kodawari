@@ -348,3 +348,40 @@ table.table-borderless-form {
 .form-mini {
   width: 700px;
 }
+
+// 商品一覧の編集
+
+.flex-item {
+  display: flex;
+  flex: wrap;
+  margin: 20px;
+}
+
+
+.product-title {
+  margin: 10px;
+  text-align: center;
+}
+
+// レシピ画像の編集
+
+.recipe-img {
+  width: 170px;
+  height:　100px;
+}
+
+
+.flex-recipe {
+  display: flex;
+  flex: wrap;
+  margin: 20px;
+}
+
+
+// レシピ作成ボタンの中央寄せ
+
+.recipe-create {
+  margin: 0 170px;
+}
+
+
