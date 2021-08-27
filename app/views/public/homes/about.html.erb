@@ -1,1 +1,81 @@
-アボウトページです
+<div class="container">
+  <div class="row my-5">
+<!--いいねレシピtop5を表示-->
+    <div class="col-sm-5">
+      <div class = "sidebar" >
+        <div class = "col-sm-9 offset-sm-3 about-image"></div>
+      </div>
+    </div>
+<!--店舗写真と紹介文-->
+    <div class="col-sm-7">
+      <div class = "mx-auto home-about">
+      <h3><strong>横浜の住宅街にポツンとある小さなハム工房！</strong></h3>
+      <p>和牛コンビーフや和牛ローストビーフなど、お肉の幸せの味届けます♪</p>
+      <p>全国銘柄和牛（宮崎牛・鹿児島和牛・くまもと和牛）やかごしま黒豚なども取り扱ってます！</p>
+      <p>お問い合わせお気軽にどうぞ。<%= link_to '',new_contact_path,class: "btn fas fa-link " %>
+        <!--<= link_to "こちら" , new_contact_path %>-->
+      </p>
+    </div>
+    </div>
+  </div>
+</div>
+
+<p class = "address" >所在地: 〒232-0071 神奈川県横浜市南区永田北３丁目２５−３４</p>
+<!-- id=mapのclassに登録住所を代入。 -->
+<div id='map' class="こだわり家金子精肉店"></div>
+
+<!-- id=mapの大きさを指定。※stylesheetにまとめてもOK -->
+<style>
+#map{
+  height: 400px;
+  width: 50%;
+  margin: 0 auto;
+}
+</style>
+
+<script>
+// 下記codeAddressでも使うため、mapを関数の外で定義、geocoderも用意
+let map
+let geocoder
+
+function initMap(){
+  // geocoderを初期化
+  geocoder = new google.maps.Geocoder()
+  // geocoderのgeocode()methodで、経緯緯度をGeocoderAPIにリクエストを送信。
+  // geocode()methodでaddressにid=mapのclassの登録住所を代入し、経緯緯度を取得。
+  geocoder.geocode( { 'address': $('#map').attr('class')}, function(results, status) {
+    // もしエラーがなければ、
+    if (status == 'OK') {
+    // map.setCenterで上記記述の経緯緯度に地図が移動。
+      map.setCenter(results[0].geometry.location);
+
+    // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    // エラーが出た場合には
+    } else {
+    // statusにエラー状況が表示されるので、その文言を調べれば解決できます。
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+
+  // mapの初期位置を指定。
+  // latは経緯、lngは緯度。（下記は東京駅を指定しています）
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: -35.6809591, lng: 139.7673068},
+  // お好みでズームサイズを変更できます。
+  // 数字が大きければ、拡大です。
+  zoom: 18
+  });
+}
+
+function codeAddress(){
+  // 入力を取得
+  let inputAddress = document.getElementById('address').value;
+  // geocodingしたあとmapを移動
+}
+</script>
+<!-- GoogleAPIキーを読み込むための記述になります。 -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['SECRET_KEY'] %>&callback=initMap" async defer></script>

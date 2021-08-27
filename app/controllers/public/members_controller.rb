@@ -1,12 +1,12 @@
 class Public::MembersController < ApplicationController
+  before_action :authenticate_member!
 
-  def index
-    @members = Member.all
-  end
+  before_action :correct_member, only: %i[edit update]
 
   def show
     @member = Member.find(params[:id])
-    @recipes = Recipe.all
+    # 要変更（現在メンバー関係なく、レシピをすべて表示できている
+    @recipes = @member.recipes.page(params[:page]).per(6)
   end
 
   def edit
@@ -18,7 +18,7 @@ class Public::MembersController < ApplicationController
     if @member.update(member_params)
       redirect_to member_path(@member.id)
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -30,8 +30,12 @@ class Public::MembersController < ApplicationController
     @member = current_customer
     @member.update(is_delete: true)
     reset_session
-    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    flash[:notice] = 'ありがとうございました。またのご利用を心よりお待ちしております。'
     redirect_to root_path
+  end
+
+  def favorites
+    @favorites = Favorite.where(member_id: current_member.id).page(params[:page]).per(6)
   end
 
   private
@@ -40,4 +44,8 @@ class Public::MembersController < ApplicationController
     params.require(:member).permit(:name, :introduction, :image, :is_deleted, :email)
   end
 
+  def correct_member
+    @member = Member.find(params[:id])
+    redirect_to root_path if current_member != @member
+  end
 end

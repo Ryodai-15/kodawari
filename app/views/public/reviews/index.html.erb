@@ -1,6 +1,5 @@
-<section class="section mt-6">
   <div class="container">
-        <div class="card mb-6">
+        <div class="card mb-7">
           <header class="card-header">
             <p class="card-header-title">
               <%= @recipe.name %>
@@ -12,16 +11,16 @@
                 <div class="star-rating-front" style="width: <%= @recipe.review_score_percentage %>%">★★★★★</div>
                 <div class="star-rating-back">★★★★★</div>
               </div>
-              <div class="average-score-display ml-3 pt-2">
+              <div class="average-score-display ml-4 pt-2">
                 <%= @recipe.avg_score %>点（<%= @recipe.reviews.count %>件のレビュー）
               </div>
             </div>
-          </div>
+          </div>　
         </div>
         <table class="table is-fullwidth has-text-centered">
           <thead>
             <tr>
-              <th>ユーザー</th><th>点数</th><th>内容</th>
+              <th>ユーザー</th><th>点数</th><th>内容</th><th></th>
             </tr>
           </thead>
           <tbody>
@@ -29,10 +28,13 @@
               <tr>
                 <td><%= review.member.name %></td>
                 <td><%= review.score %></td>
-                <td><%= review.comment %></td>
+                <td><%= simple_format(review.comment) %></td>
+                <% if review.member == current_member %>
+                  <td><%= link_to "レビューを削除する", product_recipe_review_path(@recipe.product_id, @recipe.id, review.id),method: :delete,"data-confirm" => "本当に削除しますか？" ,class:"btn btn-danger" %></td>
+                <% end %>
               </tr>
             <% end %>
           </tbody>
         </table>
+        <%= paginate @reviews %>
   </div>
-</section>

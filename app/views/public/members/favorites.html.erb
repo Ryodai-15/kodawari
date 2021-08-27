@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-sm-3">
+      <div class = "sidebar" >
+        <%= render 'public/members/mypage', member: current_member %>
+      </div>
+    </div>
+<!--会員のいいねレシピ投稿一覧を表地-->
+    <div class="col-sm-9">
+      <div class="recipe-favorites">
+        <p>いいねレシピ一覧(全<%= @favorites.count %>件)</p>
+        <div class="d-flex flex-wrap">
+          <% @favorites.each do |favo| %>
+            <div class="flex-item">
+              <div class="card-border-0">
+                <%= link_to product_recipe_path(favo.recipe.product_id, favo.recipe.id) do %>
+                  <%= attachment_image_tag favo.recipe, :image, :fill, 170, 100, fallback: "noimage.jpg", class:"recipe_img" %>
+                  <p class="card-title">
+                    <%= favo.recipe.name %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= paginate @favorites %>
+    </div>
+  </div>
+</div>

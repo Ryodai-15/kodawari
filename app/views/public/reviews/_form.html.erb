@@ -18,7 +18,7 @@
     <div class="main-rating">
       <div class="ratings mb-3">
         <span class="fa fa-star-o" id="star"></span>
-        <span class="fa fa-star-o" id="star"></span> 
+        <span class="fa fa-star-o" id="star"></span>
         <span class="fa fa-star-o" id="star"></span>
         <span class="fa fa-star-o" id="star"></span>
         <span class="fa fa-star-o" id="star"></span>
@@ -27,10 +27,10 @@
     </div>
     <%= f.hidden_field :recipe_id, value: recipe.id %>
     <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.text_field :comment, class: "textarea" %>
+    <%= f.text_area :comment, class: "textarea", class: 'review-form' %>
     <%= f.submit "保存", class: "button mt-3" %>
     <%= link_to "他のレビューを見る", product_recipe_reviews_path(recipe.product_id, recipe.id), class: "button light ml-3 mt-3" %>
   <% end %>
 </div>
 
-<%= javascript_include_tag 'public/reviews.js' %> 
+<%= javascript_include_tag 'public/reviews.js' %>

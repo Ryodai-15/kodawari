@@ -23,7 +23,7 @@
 .profile-img img{
   border-radius: 90px;
   width: 60%;
-  margin: 20px 50px; 
+  margin: 20px 50px;
 }
 
 // プロフィールボタンの間隔をあける
@@ -60,7 +60,7 @@
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   font-family: sans-serif;
 }
 
@@ -75,6 +75,12 @@ body {
 .main-rating {
   display: flex;
 }
+
+.rating-value-display {
+  font-size: 20px;
+}
+
+// 星のスコア表示
 
 .star-rating {
   position: relative;
@@ -100,13 +106,337 @@ body {
   font-size: 16px;
 }
 
-
-
-
 // サイドバーに枠線をつける
 
-.sidebar {
-  border: solid;
-  border: 4px solid;
-  border-color: #031de2;
+// .sidebar {
+//   border: solid;
+//   border: 4px solid;
+//   border-color: black;
+// }
+
+// home画面の写真設定
+
+.home-image {
+  height: 300px;
+  background-image: url(kodawariya.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+// home画面のテキスト編集
+
+.home-text {
+  padding: 40px 0 0 0;
+  text-align:center;
+}
+
+// 新規登録画面レイアウト
+
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.box1 {
+  width: 350px;
+  height: 600px;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
+.box2 {
+  width: 350px;
+  height: 450px;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
+.box-inner {
+  padding: 20px 26px;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  color: #111111;
+}
+
+.box-name {
+  margin-bottom: 13px;
+}
+
+.box-email {
+  margin-bottom: 13px;
+}
+
+.box-password {
+  margin-bottom: 22px;
+}
+
+.box-name label, .box-email label, .box-password label {
+  font-weight: 700;
+  font-size: 13px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+
+.box-name input[type="text"], .box-email input[type="email"], .box-password input[type="password"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 31px;
+  border: 1px solid #a6a6a6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07) inset;
+  border-radius: 3px;
+  padding: 0 7px;
+}
+
+.column-left {
+  float: left;
+}
+
+.column-right {
+  float: right;
+}
+
+.box-password a {
+  font-size: 13px;
+}
+
+.box-login {
+  margin-bottom: 26px;
+}
+
+.box-login input[type="submit"] {
+  border-style: none;
+  width: 100%;
+  height: 31px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-radius: 3px;
+  border: 1px #a88734 solid;
+}
+
+.box-login input[type="submit"]:hover {
+  cursor: pointer;
+  background: #f0c14b;
+}
+
+.remember {
+  font-size: 13px;
+  margin-top: 18px;
+  padding-left: 3px;
+}
+
+.box-newusr p {
+  text-align: center;
+  font-size: 12px;
+  color: #767676;
+  margin-bottom: 14px;
+}
+
+.box-newusr p span {
+  text-decoration: line-through;
+  text-decoration-color: #e7e7e7;
+}
+
+.box-newusr a {
+  display: block;
+  width: 100%;
+  height: 31px;
+  font-size: 13px;
+  color: #111;
+  line-height: 31px;
+  text-align: center;
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+  border-radius: 3px;
+  border: 1px #a2a6ac solid;
+}
+
+.box-newusr a:hover {
+  background: #e7e9ec;
+}
+
+// 検索結果を中央に寄せる
+h3.search {
+  text-align: center;
+  padding: 20px 0;
+}
+
+// カミナリテキストの編集
+.pagination {
+  justify-content: center;
+}
+
+// バリデーションの装飾
+
+div.field_with_errors {
+  background-color: #fcc;
+  padding: 10px;
+}
+
+div.notification {
+  text-align: center;
+}
+
+// about画面の画面編集
+
+.about-image {
+  height: 200px;
+  background-image: url(tenpo.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// ABOUT画面の住所表記
+
+.address {
+  text-align: center;
+}
+
+// レシピボタンの配置
+
+.recipe-button {
+  display: flex;
+  margin: 10px 100px;
+}
+
+.card-button {
+  margin: 10px 50px;
+}
+
+// ランク画像を編集
+
+.rank {
+  text-align: center;
+  font-size: 20px;
+}
+
+.rank-product {
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.rank-title {
+  padding: 10px 0 0 0;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// 入力フォームの編集
+
+.form-size {
+  width: 700px;
+  height: 200px;
+}
+
+table.table-borderless-form {
+  border-collapse:separate;
+	border-spacing: 50px 20px;
+}
+
+.review-form {
+  width: 500px;
+  height: 150px;
+}
+
+.form-mini {
+  width: 700px;
+}
+
+// 商品一覧の編集
+
+.flex-item {
+  display: flex;
+  flex: wrap;
+  margin: 20px;
+}
+
+
+.product-title {
+  margin: 10px;
+  text-align: center;
+}
+
+// レシピ画像の編集
+
+.recipe-img {
+  width: 170px;
+  height: 100px;
+}
+
+.recipe-show-img {
+  width: 500px;
+  height:　300px;
+}
+
+.flex-recipe {
+  display: flex;
+  flex: wrap;
+  margin: 20px;
+}
+
+.recipe-title {
+  margin: 10px;
+  text-align: center;
+}
+
+.recipe-create {
+  margin: 0 170px;
+}
+
+// お問い合わせページ
+
+.page-header {
+  text-align: center;
+}
+
+table.table-borderless-confirm {
+  border-collapse:separate;
+	border-spacing: 50px 20px;
+	margin: 0 auto;
+}
+
+.confirm {
+  display: flex;
+  padding: 0 650px;
+}
+
+.confirm-button {
+  padding: 20px 50px;
+  text-align: center;
+}
+
+// 管理者側ホームページ
+
+.admin-home {
+  text-align: center;
+}
+
+.admin-image {
+  height: 300px;
+  background-image: url(tensyu.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// 商品・レシピのタイトル
+
+.recipe-info {
+  // text-align: center;
+  font-size: 20px;
+  font-family: ヒラギノ丸ゴ ProN;
+}
+

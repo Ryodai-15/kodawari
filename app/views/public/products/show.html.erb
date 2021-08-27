@@ -7,25 +7,30 @@
     <div class="col-sm-6">
       <div class="d-flex flex-wrap">
         <div class="flex-item">
-          <div class="card border-0">
+          <div class="product">
               <%= attachment_image_tag @product, :image, :fill, 500, 300 %>
+              <p class="recipe-info">商品名:</p>
               <p class="card-title">
                 <%= @product.name %>
               </p>
+              <p class="recipe-info">商品情報:</p>
               <p class="card-title">
-                <%= @product.introduction %>
+                <%= simple_format(@product.introduction) %>
+                <!--<= @product.introduction %>-->
               </p>
+              <p class="recipe-info">商品のこだわり:</p>
               <p class="card-title">
-                <%= @product.kodawari %>
+                <%= simple_format(@product.kodawari) %>
+                <!--<= @product.kodawari %>-->
               </p>
-              <p class="card-title">
+              <p class="recipe-create">
                 <%= link_to "レシピを投稿する", new_product_recipe_path(@product.id) ,class:"btn btn-primary" %>
               </p>
           </div>
         </div>
-      </div>        
+      </div>
     </div>
-    
+
     <div class="col-sm-3">
       <%= render 'public/recipes/recipe', recipes: @recipes %>
     </div>

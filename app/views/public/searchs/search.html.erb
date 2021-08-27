@@ -1,0 +1,7 @@
+<% if @model == 'product' %>
+  <h3 class = "search">【商品の検索結果】検索ワード：<%= @content %></h3>
+    <%= render 'public/searchs/product', products: @records %>
+<% else @model == 'recipe' %>
+  <h3 class = "search">【レシピの検索結果】検索ワード：<%= @content %></h3>
+    <%= render 'public/searchs/reci', recipes: @records %>
+<% end %>
