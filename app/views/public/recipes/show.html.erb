@@ -9,13 +9,16 @@
         <div class="flex-item">
           <div class="card　border-0">
               <%= attachment_image_tag @recipe, :image, :fill, 500, 300, fallback: "noimage.jpg", class:"recipe-show-img" %>
+              <p class="recipe-info">レシピ名:</p>
               <p class="card-title">
                 <%= @recipe.name %>
               </p>
+              <p class="recipe-info">レシピ情報:</p>
               <p class="card-title">
                 <%= simple_format(@recipe.introduction) %>
                 <!--<= @recipe.introduction %>-->
               </p>
+              <p class="recipe-info">レシピのこだわり:</p>
               <p class="card-title">
                 <%= simple_format(@recipe.kodawari) %>
                 <!--<= @recipe.kodawari %>-->

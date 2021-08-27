@@ -9,13 +9,16 @@
         <div class="flex-item">
           <div class="product">
               <%= attachment_image_tag @product, :image, :fill, 500, 300 %>
+              <p class="recipe-info">商品名:</p>
               <p class="card-title">
                 <%= @product.name %>
               </p>
+              <p class="recipe-info">商品情報:</p>
               <p class="card-title">
                 <%= simple_format(@product.introduction) %>
                 <!--<= @product.introduction %>-->
               </p>
+              <p class="recipe-info">商品のこだわり:</p>
               <p class="card-title">
                 <%= simple_format(@product.kodawari) %>
                 <!--<= @product.kodawari %>-->
