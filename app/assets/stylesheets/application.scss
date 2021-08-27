@@ -417,3 +417,17 @@ table.table-borderless-confirm {
   padding: 20px 50px;
   text-align: center;
 }
+
+// 管理者側ホームページ
+
+.admin-home {
+  text-align: center;
+}
+
+.admin-image {
+  height: 300px;
+  background-image: url(tensyu.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
