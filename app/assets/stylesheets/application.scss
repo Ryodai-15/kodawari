@@ -76,6 +76,12 @@ body {
   display: flex;
 }
 
+.rating-value-display {
+  font-size: 20px;
+}
+
+// 星のスコア表示
+
 .star-rating {
   position: relative;
   width: 5em;
@@ -390,4 +396,24 @@ table.table-borderless-form {
   margin: 0 170px;
 }
 
+// お問い合わせページ
 
+.page-header {
+  text-align: center;
+}
+
+table.table-borderless-confirm {
+  border-collapse:separate;
+	border-spacing: 50px 20px;
+	margin: 0 auto;
+}
+
+.confirm {
+  display: flex;
+  padding: 0 650px;
+}
+
+.confirm-button {
+  padding: 20px 50px;
+  text-align: center;
+}
