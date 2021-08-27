@@ -4,8 +4,8 @@ class DeviseCreateMembers < ActiveRecord::Migration[5.2]
   def change
     create_table :members do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
 
       ## Recoverable
       t.string   :reset_password_token
@@ -36,7 +36,6 @@ class DeviseCreateMembers < ActiveRecord::Migration[5.2]
       t.string :image_id
       t.text :introduction
       t.boolean :is_deleted
-
 
       t.timestamps null: false
     end

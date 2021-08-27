@@ -1,5 +1,4 @@
 class Admin::MembersController < ApplicationController
-  
   before_action :if_not_admin
 
   def index
@@ -14,18 +13,18 @@ class Admin::MembersController < ApplicationController
   def edit
     @member = Member.find(params[:id])
   end
-  
+
   def update
     @member = Member.find(params[:id])
     if @member.update(member_params)
       redirect_to admin_member_path(@member.id)
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   private
-  
+
   def if_not_admin
     redirect_to root_path unless admin_signed_in?
   end
@@ -33,5 +32,4 @@ class Admin::MembersController < ApplicationController
   def member_params
     params.require(:member).permit(:name, :introduction, :image, :is_deleted, :email)
   end
-
 end
