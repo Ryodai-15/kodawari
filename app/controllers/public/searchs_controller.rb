@@ -1,13 +1,12 @@
 class Public::SearchsController < ApplicationController
-
   def search
     # viewのform_tagにて
     # 選択したmodelの値を@modelに代入。
-    @model = params["model"]
+    @model = params['model']
     # 選択した検索方法の値を@methodに代入。
-    @method = params["method"]
+    @method = params['method']
     # 検索ワードを@contentに代入。
-    @content = params["content"]
+    @content = params['content']
     # @model, @content, @methodを代入した、
     # search_forを@recordsに代入。
     @records = search_for(@model, @content, @method)
@@ -23,16 +22,15 @@ class Public::SearchsController < ApplicationController
         Product.where(name: content)
       # 選択した検索方法が部分一致だったら
       else
-        Product.where('name LIKE ?', '%'+content+'%')
+        Product.where('name LIKE ?', '%' + content + '%')
       end
     # 選択したモデルがrecipeだったら
     elsif model == 'recipe'
       if method == 'perfect'
         Recipe.where(name: content)
       else
-        Recipe.where('name LIKE ?', '%'+content+'%')
+        Recipe.where('name LIKE ?', '%' + content + '%')
       end
     end
   end
-
 end

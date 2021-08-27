@@ -11,20 +11,20 @@
         <p>いいねレシピ一覧(全<%= @favorites.count %>件)</p>
         <div class="d-flex flex-wrap">
           <% @favorites.each do |favo| %>
-
-          <div class="flex-item">
-            <div class="card-border-0">
-              <%= link_to product_recipe_path(@recipe.product_id, @recipe.id) do %>
-                <%= attachment_image_tag favo.recipe, :image, :fill, 170, 100 %>
-                <p class="card-title">
-                  <%= favo.recipe.name %>
-                </p>
-              <% end %>
+            <div class="flex-item">
+              <div class="card-border-0">
+                <%= link_to product_recipe_path(favo.recipe.product_id, favo.recipe.id) do %>
+                  <%= attachment_image_tag favo.recipe, :image, :fill, 170, 100, fallback: "noimage.jpg", class:"recipe_img" %>
+                  <p class="card-title">
+                    <%= favo.recipe.name %>
+                  </p>
+                <% end %>
+              </div>
             </div>
-          </div>
           <% end %>
         </div>
       </div>
+      <%= paginate @favorites %>
     </div>
   </div>
 </div>

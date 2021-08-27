@@ -1,5 +1,4 @@
 class Admin::ProductsController < ApplicationController
-
   def new
     @product = Product.new
   end
@@ -15,8 +14,8 @@ class Admin::ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
-    # @items = Item.page(params[:page]).per(10)
+    # @products = Product.all
+    @products = Product.page(params[:page]).per(4)
   end
 
   def show
@@ -38,9 +37,7 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-    def product_params
-      params.require(:product).permit(:image, :name, :introduction, :kodawari)
-    end
-
+  def product_params
+    params.require(:product).permit(:image, :name, :introduction, :kodawari)
+  end
 end
-

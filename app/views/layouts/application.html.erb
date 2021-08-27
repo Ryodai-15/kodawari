@@ -4,7 +4,7 @@
     <title>Kodawari</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/1612cd58c9.js" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <%= link_to root_path do %>
-            <h1 class="title border navbar-brand pt-3 pb-3 pr-5 pl-5 text-dark" href="/">LOGO</h1>
+            <h1 class="title border navbar-brand pt-3 pb-3 pr-5 pl-5 text-dark" href="/">KODAWARI</h1>
           <% end %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,41 +24,41 @@
             <ul class="navbar-nav ml-auto">
             <% if member_signed_in? %>
               <li class="btn btn-default border ml-4">
-                <%= link_to "マイページ", member_path(current_member), class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "マイページ", member_path(current_member), class: 'fas fa-user btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to "商品一覧", products_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "商品一覧", products_path, class: 'fas fa-utensils btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to "About", home_about_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "About", home_about_path, class: 'fas fa-store-alt btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to "ログアウト", destroy_member_session_path, method: :delete, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "ログアウト", destroy_member_session_path, method: :delete, class: 'fas fa-sign-in-alt btn btn-default nav-link text-dark' %>
               </li>
 
               <% elsif admin_signed_in? %>
               <li class="btn btn-default border ml-4">
-                <%= link_to "商品一覧", admin_products_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "商品一覧", admin_products_path, class: 'fas fa-utensils btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to "会員一覧", admin_members_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "会員一覧", admin_members_path, class: 'fas fa-users btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'fas fa-sign-in-alt btn btn-default nav-link text-dark' %>
               </li>
 
             <% else %>
               <li class="btn btn-default border ml-4">
-                <%= link_to "About", home_about_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "About", home_about_path, class: 'fas fa-store-alt btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class: 'fas fa-user-check btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to "新規登録", new_member_registration_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "新規登録", new_member_registration_path, class: 'fas fa-user-plus btn btn-default nav-link text-dark' %>
               </li>
               <li class="btn btn-default border ml-4">
-                <%= link_to "ログイン", new_member_session_path, class: 'btn btn-default nav-link text-dark' %>
+                <%= link_to "ログイン", new_member_session_path, class: 'fas fa-sign-in-alt btn btn-default nav-link text-dark' %>
               </li>
             <% end %>
             </ul>

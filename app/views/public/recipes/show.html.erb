@@ -8,24 +8,32 @@
       <div class="d-flex flex-wrap">
         <div class="flex-item">
           <div class="card　border-0">
-              <%= attachment_image_tag @recipe, :image, :fill, 500, 300 %>
+              <%= attachment_image_tag @recipe, :image, :fill, 500, 300, fallback: "noimage.jpg", class:"recipe-show-img" %>
+              <p class="recipe-info">レシピ名:</p>
               <p class="card-title">
                 <%= @recipe.name %>
               </p>
+              <p class="recipe-info">レシピ情報:</p>
               <p class="card-title">
-                <%= @recipe.introduction %>
+                <%= simple_format(@recipe.introduction) %>
+                <!--<= @recipe.introduction %>-->
               </p>
+              <p class="recipe-info">レシピのこだわり:</p>
               <p class="card-title">
-                <%= @recipe.kodawari %>
+                <%= simple_format(@recipe.kodawari) %>
+                <!--<= @recipe.kodawari %>-->
               </p>
               <% if @recipe.member == current_member %>
-                <p class="card-button">
-                  <%= link_to "レシピを編集する", edit_product_recipe_path(@recipe.product_id,@recipe.id) ,class:"btn btn-primary" %>
-                </p>
-                <p class="card-button">
-                  <%= link_to "レシピを削除する", product_recipe_path(@recipe.product_id,@recipe.id),method: :delete,"data-confirm" => "本当に削除しますか？" ,class:"btn btn-danger" %>
-                </p>
+                <div class = "recipe-button">
+                  <p class="card-button">
+                    <%= link_to "レシピを編集する", edit_product_recipe_path(@recipe.product_id,@recipe.id) ,class:"btn btn-primary" %>
+                  </p>
+                  <p class="card-button">
+                    <%= link_to "レシピを削除する", product_recipe_path(@recipe.product_id,@recipe.id),method: :delete,"data-confirm" => "本当に削除しますか？" ,class:"btn btn-danger" %>
+                  </p>
+                </div>
               <% end %>
+
               <div class="favorite-btn-<%= @recipe.id %>">
                 <%= render 'public/favorites/favorite', recipe: @recipe %>
               </div>

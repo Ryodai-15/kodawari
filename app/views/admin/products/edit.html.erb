@@ -1,14 +1,27 @@
+<!--バリデーションメッセージ-->
+<% if @product.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= @product.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <div class="container">
   <div class="row text-right mt-4">
-    <div class="col-sm-4">
+    <div class="col-sm-7">
       <h4>商品編集</h4>
     </div>
   </div>
-  
+
   <%= form_with model: [:admin, @product], local:true do |f| %>
     <div class="row">
       <div class="col-sm-10 offset-2">
-        <table class="table-borderless-item">
+        <table class="table-borderless-form">
           <tr>
             <div>
               <td><%= f.label :商品画像 %></td>
@@ -24,19 +37,19 @@
           <tr>
             <div class="col-sm-2">
               <td><%= f.label :商品説明 %></td>
-              <td><%= f.text_area :introduction, class:"form-control", autofocus: true %></td>
+              <td><%= f.text_area :introduction, class:"form-control", autofocus: true, class: 'form-size' %></td>
             </div>
           </tr>
-          <tr> 
+          <tr>
             <div>
               <td><%= f.label :商品のこだわり %></td>
-              <td><%= f.text_area :kodawari, class:"form-control", autofocus: true %></td>
+              <td><%= f.text_area :kodawari, class:"form-control", autofocus: true, class: 'form-size' %></td>
             </div>
           </tr>
         </table>
       </div>
     </div>
-    
+
     <div class="row text-center mb-3">
       <div class="col-sm-12">
         <td><%= f.submit "変更を保存" ,class: 'btn btn-success col-sm-2' %></td>

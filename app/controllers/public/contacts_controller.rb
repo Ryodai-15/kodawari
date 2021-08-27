@@ -1,5 +1,4 @@
 class Public::ContactsController < ApplicationController
-  
   def new
     @contact = Contact.new
   end
@@ -9,11 +8,9 @@ class Public::ContactsController < ApplicationController
   # 送信ボタンを押されたらcreateアクションを実行します。
   def confirm
     @contact = Contact.new(contact_params)
-    if @contact.invalid?
-      render :new
-    end
+    render :new if @contact.invalid?
   end
-  
+
   # 入力内容に誤りがあった場合、
   # 入力内容を保持したまま前のページに戻るのが当たり前になっているかと思いますが、
   # backアクションを定義することで可能となります。
@@ -36,13 +33,11 @@ class Public::ContactsController < ApplicationController
   end
 
   # 送信完了画面を使用する場合お使いください。
-  def done
-  end
+  def done; end
 
   private
 
   def contact_params
     params.require(:contact).permit(:email, :name, :phone_number, :subject, :message)
   end
-  
 end
