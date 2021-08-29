@@ -27,7 +27,7 @@ class Public::MembersController < ApplicationController
   end
 
   def withdraw
-    @member = current_customer
+    @member = current_member
     @member.update(is_delete: true)
     reset_session
     flash[:notice] = 'ありがとうございました。またのご利用を心よりお待ちしております。'
